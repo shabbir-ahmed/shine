@@ -1,14 +1,26 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Shine</title>
-    <%= csrf_meta_tags %>
+  	<head>
+    	<title>Shine</title>
+    	<%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all' %>
-    <%= javascript_include_tag 'application' %>
-  </head>
+    	<%= stylesheet_link_tag    'application', media: 'all' %>
+    	<%= javascript_include_tag 'application' %>
+  	</head>
 
-  <body>
-    <%= yield %>
-  </body>
+  	<body class="container">
+  		<% if notice.present? %>
+  			<section class="alert alert-info">
+  				<%= notice %>
+  			</section>
+  		<% end %>
+
+  		<% if alert.present? %>
+  			<section class="alert alert-danger">
+  				<%= alert %>
+  			</section>
+  		<% end %>
+
+    	<%= yield %>
+  	</body>
 </html>
